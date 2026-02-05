@@ -1,8 +1,14 @@
+from colorama import Fore, Back, Style, init
 from marksman import Marksman
 from fighter import Fighter
 from monster import Monster
 from support import Support
 from mage import Mage
+
+# auto reset warna (biar gak ngefek ke print selanjutnya)
+init(autoreset=True)
+print(Fore.GREEN + Back.WHITE + Style.BRIGHT + "\n========== Selamat datang di Game RPG OOP ==========")
+print()
 
 zilong = Fighter("zilong", 100)
 ewdora = Mage("Ewdora", 100)
@@ -19,6 +25,9 @@ print(dragon)
 # # zilong.ultimate(dragon)
 # # print(f"ambil hp hero : {zilong.__hp()}")
 # # zilong.set_hp(1000)
+# ambil atribut private via gatter
+print(f"HP Ewdora: {ewdora.hp}")
+print(f"HP Zilong: {zilong.hp}")
 # # ewdora.ultimate(dragon)
 # zilong.combo(dragon)
 # ewdora.combo(dragon)
