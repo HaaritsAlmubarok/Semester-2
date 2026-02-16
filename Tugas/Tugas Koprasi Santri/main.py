@@ -24,7 +24,7 @@ def input_angka(pesan):
 
 def tampilkan_barang(daftar_barang):
     print("\n=== DAFTAR MAKANAN ===")
-    for i, barang in enumerate(daftar_barang): # enumerate untuk menampilkan index barang (1,2,3...) beserta isinya
+    for i, barang in enumerate(daftar_barang): # enumerate = menampilkan index barang (nomer urut) beserta isinya
         print(f"{i+1}. {barang.nama} | Harga: {barang.harga} | Stok: {barang.stok}")
 
     # Menampilkan semua barang yang tersedia di toko beserta harga dan stoknya.
@@ -56,7 +56,7 @@ def menu_admin(admin, daftar_barang):
         elif pilihan == "2":
             if not daftar_barang:
                 print("Belum ada makanan!")
-                continue
+                continue # continue = Melewati sisa kode di iterasi sekarang (lalu langsung lanjut ke iterasi berikutnya)
 
             tampilkan_barang(daftar_barang)
             index = input_angka("Pilih nomor makanan: ") - 1 # -1 karena index di list mulai dari 0
@@ -104,14 +104,14 @@ def menu_santri(santri, daftar_barang):
                 continue
 
             tampilkan_barang(daftar_barang)
-            index = input_angka("Pilih nomor makanan: ") - 1
+            index = input_angka("Pilih nomor makanan: ") - 1 # -1 = index di list mulai dari 0
 
             if 0 <= index < len(daftar_barang):
                 jumlah = input_angka("Jumlah beli: ")
                 try:
                     keranjang.tambah_barang(daftar_barang[index], jumlah)
                     print("Berhasil ditambahkan ke keranjang!")
-                except ValueError as e:
+                except ValueError as e: # e = variabel untuk menyimpan error
                     print(e)
             else:
                 print("\n Belajar ngtik dulu...!")
@@ -186,7 +186,7 @@ def main():
 
         elif pilihan == "3":
             print("\n               === Program selesai ===")
-            print("   ================ Terima Kasih! ================")
+            print("   ================ Terima Kasih! ================\n")
             break
 
         else:

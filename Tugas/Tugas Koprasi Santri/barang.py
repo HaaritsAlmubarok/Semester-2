@@ -16,5 +16,6 @@ class Barang:
     def kurangi_stok(self, jumlah: int):
         if jumlah <= self.__stok:
             self.__stok -= jumlah
+            # kalo stok lebih banyak atau sama dengan jumlah yang teredia, maka stok akan di kurangi sesuai jumlah tersebut
         else:
             raise ValueError("Stok habis, maaf!")
