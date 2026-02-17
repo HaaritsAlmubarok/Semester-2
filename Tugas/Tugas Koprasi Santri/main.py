@@ -12,7 +12,7 @@ def input_angka(pesan):
         try:
             angka = int(input(pesan)) # kalo ketik huruf bakal error
             if angka < 0:
-                print("\n Pilih 1 - 3 aja...")
+                print("\n Pilih angka yang bener...!")
             else:
                 return angka
         except ValueError:
