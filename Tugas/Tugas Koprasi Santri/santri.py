@@ -14,5 +14,6 @@ class Santri(Orang):
     def kurangi_saldo(self, jumlah: int):
         if jumlah <= self.__saldo: # maksudnya = Apakah uang cukup untuk bayar?
             self.__saldo -= jumlah
+            # kalo saaldo lebih banyak atau sama dengan jumlah yang teredia, maka saaldo akan di kurangi sesuai jumlah tersebut
         else:
             raise ValueError("Saldo tidak cukup, sabar ya!")

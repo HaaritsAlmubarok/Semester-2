@@ -24,14 +24,18 @@ def input_angka(pesan):
 
 def tampilkan_barang(daftar_barang):
     print("\n=== DAFTAR MAKANAN ===")
-    for i, barang in enumerate(daftar_barang): # enumerate = menampilkan index barang (nomer urut) beserta isinya
+    for i, barang in enumerate(daftar_barang):
+    # i = index (nomer urut), barang = isi dari list daftar_barang (object dari class Barang)
+    # enumerate = menampilkan index barang (nomer urut) beserta isinya
         print(f"{i+1}. {barang.nama} | Harga: {barang.harga} | Stok: {barang.stok}")
+        # i+1 = karena index di list mulai dari 0, jadi ditambah 1 biar nomer urutnya mulai dari 1
 
     # Menampilkan semua barang yang tersedia di toko beserta harga dan stoknya.
 
 
 
 # ================= MENU ADMIN =================
+# MENU - 1
 
 def menu_admin(admin, daftar_barang):
     while True: # program ngulang terus sampai admin pilih logout
@@ -61,7 +65,7 @@ def menu_admin(admin, daftar_barang):
             tampilkan_barang(daftar_barang)
             index = input_angka("Pilih nomor makanan: ") - 1 # -1 karena index di list mulai dari 0
 
-            if 0 <= index < len(daftar_barang):
+            if 0 <= index < len(daftar_barang): # supaya index tidak kurang dari 0 dan tidak melebihi jumlah barang
                 jumlah = input_angka("Jumlah stok tambahan: ")
                 admin.tambah_stok_barang(daftar_barang[index], jumlah)
                 print("Stok berhasil ditambahkan!")
@@ -80,6 +84,7 @@ def menu_admin(admin, daftar_barang):
 
 
 # ================= MENU SANTRI =================
+# MENU - 2
 
 def menu_santri(santri, daftar_barang):
     keranjang = Keranjang()
@@ -183,6 +188,10 @@ def main():
                 menu_santri(santri, daftar_barang)
             else:
                 print("\n Password salah!")
+
+
+
+# MENU - 3 (Keluar)
 
         elif pilihan == "3":
             print("\n               === Program selesai ===")
